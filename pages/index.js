@@ -11,7 +11,7 @@ export default function Home() {
   const handleSearch = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`http://localhost:5000/search?q=${query}`);
+      const res = await fetch(`tech0-gen-8-step3-testapp-py1-11.azurewebsites.net/search?q=${query}`);
 
       if (!res.ok) {
         throw new Error(`Error: ${res.status}`);
@@ -38,7 +38,7 @@ export default function Home() {
     console.log('Request Body:', requestBody);  // デバッグ用にリクエストボディをログ出力
   
     try {
-      const res = await fetch('http://localhost:5000/register-performance', {
+      const res = await fetch('tech0-gen-8-step3-testapp-py1-11.azurewebsites.net/register-performance', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ export default function Home() {
   useEffect(() => {
     // Peopleの一覧を取得する
     const fetchPeople = async () => {
-      const res = await fetch('http://localhost:5000/people');
+      const res = await fetch('tech0-gen-8-step3-testapp-py1-11.azurewebsites.net/people');
       const data = await res.json();
       setPeople(data);
     };
@@ -71,7 +71,7 @@ export default function Home() {
 
   // パフォーマンスを取得する関数
   const fetchPerformances = async (personId) => {
-    const res = await fetch(`http://localhost:5000/performances/${personId}`);
+    const res = await fetch(`tech0-gen-8-step3-testapp-py1-11.azurewebsites.net/performances/${personId}`);
     const data = await res.json();
     console.log('Performances:', data);  // ここでデータが取れているか確認
     setPerformances(data);
